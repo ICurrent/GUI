@@ -2,10 +2,11 @@ from tkinter import *
 from tkinter import messagebox
 
 root = Tk()
-root.geometry()
+root.geometry('315x400')
+root.resizable(False, False)
 root.title('tic and toe')
 root.iconbitmap()
-#root.wm_attributes(alpha=0.4)
+#root.wm_attributes('-alpha', 0.8)
 
 #LEt x start
 clicked = True
@@ -85,7 +86,7 @@ def checkwin():
         messagebox.showinfo("x and o", "X wins!!!")
         disable_allButtons()
 
-    elif b1["text"] == "X" and b2["text"] == "X" and b3["text"] == "X":
+    elif b3["text"] == "X" and b5["text"] == "X" and b7["text"] == "X":
         b3.config(bg="red")
         b5.config(bg="red")
         b7.config(bg="red")
@@ -95,65 +96,65 @@ def checkwin():
 
     #check for O
     elif b1["text"] == "O" and b2["text"] == "O" and b3["text"] == "O":
-        b1.config(bg="red")
-        b2.config(bg="red")
-        b3.config(bg="red")
+        b1.config(bg="blue")
+        b2.config(bg="blue")
+        b3.config(bg="blue")
         winner = True
         messagebox.showinfo("x and o", "O wins!!!")
         disable_allButtons()
 
     elif b4["text"] == "O" and b5["text"] == "O" and b6["text"] == "O":
-        b4.config(bg="red")
-        b5.config(bg="red")
-        b6.config(bg="red")
+        b4.config(bg="blue")
+        b5.config(bg="blue")
+        b6.config(bg="blue")
         winner = True
         messagebox.showinfo("x and o", "O wins!!!")
         disable_allButtons()
 
     elif b7["text"] == "O" and b8["text"] == "O" and b9["text"] == "O":
-        b7.config(bg="red")
-        b8.config(bg="red")
-        b9.config(bg="red")
+        b7.config(bg="blue")
+        b8.config(bg="blue")
+        b9.config(bg="blue")
         winner = True
         messagebox.showinfo("x and o", "O wins!!!")
         disable_allButtons()
 
     elif b1["text"] == "O" and b4["text"] == "O" and b7["text"] == "O":
-        b1.config(bg="red")
-        b4.config(bg="red")
-        b7.config(bg="red")
+        b1.config(bg="blue")
+        b4.config(bg="blue")
+        b7.config(bg="blue")
         winner = True
         messagebox.showinfo("x and o", "O wins!!!")
         disable_allButtons()
 
     elif b2["text"] == "O" and b5["text"] == "O" and b8["text"] == "O":
-        b2.config(bg="red")
-        b5.config(bg="red")
-        b8.config(bg="red")
+        b2.config(bg="blue")
+        b5.config(bg="blue")
+        b8.config(bg="blue")
         winner = True
-        messagebox.messagebox.showinfo("x and o", "O wins!!!")
+        messagebox.showinfo("x and o", "O wins!!!")
         disable_allButtons()
 
     elif b3["text"] == "O" and b6["text"] == "O" and b9["text"] == "O":
-        b3.config(bg="red")
-        b6.config(bg="red")
-        b9.config(bg="red")
+        b3.config(bg="blue")
+        b6.config(bg="blue")
+        b9.config(bg="blue")
         winner = True
         messagebox.showinfo("x and o", "O wins!!!")
         disable_allButtons()
 
     elif b1["text"] == "O" and b5["text"] == "O" and b9["text"] == "O":
-        b1.config(bg="red")
-        b5.config(bg="red")
-        b9.config(bg="red")
+        b1.config(bg="blue")
+        b5.config(bg="blue")
+        b9.config(bg="blue")
         winner = True
         messagebox.showinfo("x and o", "O wins!!!")
         disable_allButtons()
 
-    elif b1["text"] == "O" and b2["text"] == "O" and b3["text"] == "O":
-        b3.config(bg="red")
-        b5.config(bg="red")
-        b7.config(bg="red")
+    elif b3["text"] == "O" and b5["text"] == "O" and b7["text"] == "O":
+        b3.config(bg="blue")
+        b5.config(bg="blue")
+        b7.config(bg="blue")
         winner = True
         messagebox.showinfo("x and o", "O wins!!!")
         disable_allButtons()
@@ -180,7 +181,7 @@ def b_click(b):
         messagebox.showerror("x and o", "Box selected and pick another")
 
 def reset():
-    global b1, b2, b3, b4, b5, b6, b7, b8, b9
+    global b1, b2, b3, b4, b5, b6, b7, b8, b9, l1
     global clicked, count
     clicked = True
     count = 0
@@ -206,6 +207,8 @@ def reset():
     b9 = Button(root, text=" ", font =('arial', 20), height=3, width=6, \
         bg='SystemButtonFace', command= lambda: b_click(b9))
 
+    l1 = Label(root, text = "Taking account of score", font =('beauty flower', 15, 'bold'))
+
     #Grid the buttons
     b1.grid(row=0, column=0)
     b2.grid(row=0, column=1)
@@ -218,6 +221,7 @@ def reset():
     b7.grid(row=2, column=0)
     b8.grid(row=2, column=1)
     b9.grid(row=2, column=2)
+    l1.place(x=80, y=370)
 
 
 #Create menue

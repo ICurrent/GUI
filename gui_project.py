@@ -1,7 +1,6 @@
 import email
 from tkinter import *
 import sqlite3
-from unicodedata import name
 from PIL import Image, ImageTk
 from requests import delete
 
