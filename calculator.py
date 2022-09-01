@@ -1,4 +1,4 @@
-from ast import Lambda, operator
+
 from tkinter import *
 
 
